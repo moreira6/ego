@@ -442,14 +442,14 @@ function render(){
  document.getElementById("progressBar").style.width=
  `${((current+1)/questions.length)*100}%`;
 
- let html=`<div class="subject">${q.subject}</div>
-<div class="question">${q.question || q.text}</div>`;
+let html = `<div class="subject">${q.subject}</div>`;
 
- if(q.passage){
-   html+=`<div class="text-box">${q.passage}</div>`;
- }
+if(q.passage){
+  html += `<div class="text-box">${q.passage}</div>`;
+}
 
- html+=`<div class="options">`;
+html += `<div class="question">${q.question || q.text}</div>`;
+html += `<div class="options">`;
 
  q.options.forEach((opt,i)=>{
    html+=`
